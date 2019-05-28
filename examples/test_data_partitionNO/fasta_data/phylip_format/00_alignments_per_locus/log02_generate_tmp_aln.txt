@@ -1,0 +1,5 @@
+File 1 visited : locus_1.aln
+File 2 visited : locus_2.aln
+File 3 visited : locus_3.aln
+File 4 visited : locus_4.aln
+File 5 visited : locus_10.aln

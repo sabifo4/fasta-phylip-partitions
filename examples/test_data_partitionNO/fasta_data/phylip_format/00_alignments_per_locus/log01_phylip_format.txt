@@ -1,0 +1,6 @@
+Parsing locus 1: locus_1
+Parsing locus 2: locus_2
+Parsing locus 3: locus_3
+Parsing locus 4: locus_4
+Parsing locus 5: locus_10
+There are 5 loci visited to generate summary statistics

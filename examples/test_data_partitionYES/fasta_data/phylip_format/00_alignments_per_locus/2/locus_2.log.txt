@@ -1,0 +1,5 @@
+Number of species: 4
+Length for species sp1 is: 47
+Length for species sp2 is: 47
+Length for species sp3 is: 47
+Length for species sp6 is: 47
