@@ -83,6 +83,16 @@ This script can be run as it follows:
 Run_tasks.sh <path_to_you_directory_with_fasta_alignments> <name_for_output_files> <partY|partN>
 ```
 
+> #### **NOTE: The bash scripts assume that the `bash` is in `/bin/bash`, hence the shebang is `#!/bin/bash`. If your `bash` is somewhere else, please change the line of the bash scripts accordingly. For instance, you could run the following `for` loop:**
+```bash
+cd fasta-phylip-partitions/src
+sed -i 's/\#\!\/bin\/bash/\#\!<ADD_HERE_YOUR_PATH_TO_BASH>/' Run_tasks.sh 
+for i in Tools/*.sh 
+do 
+	sed -i 's/\#\!\/bin\/bash/\#\!<ADD_HERE_YOUR_PATH_TO_BASH>/' $i 
+done
+```
+
 ## What will the output be?
 
 ### If you decide to generate partitioned alignments...
