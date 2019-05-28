@@ -111,7 +111,7 @@ phylip_format
          |          |  |- partitions12_<filen_name>.aln
          |          |
          |          |- log01_phylip.format.txt 
-         |          |- lof02_generate_tmp_aln.txt
+         |          |- log02_generate_tmp_aln.txt
          |
          |- 01_alignment_all_loci 
          |          |- <tag_out_name>_all_loci.aln  
@@ -185,7 +185,7 @@ phylip_format
          |          |  |- <filen_name>.log.txt
          |          |
          |          |- log01_phylip.format.txt 
-         |          |- lof02_generate_tmp_aln.txt
+         |          |- log02_generate_tmp_aln.txt
          |
          |- 01_alignment_all_loci 
          |          |- <tag_out_name>_all_loci.aln  
