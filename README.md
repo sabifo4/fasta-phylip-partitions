@@ -45,7 +45,7 @@ name=$( echo $file | sed 's/\.fa/\.fasta/' )
 mv $file $name
 done
 ```
-You will also need to create a text file with the names (one name per row) of all the species that are present in the alignments. The content of this file should look like this: 
+You will also need to create a text file called `species_names.txt` with the names (one name per row) of all the species that are present in the alignments. The content of this file should look like this: 
 
 ```
 name_sp1
