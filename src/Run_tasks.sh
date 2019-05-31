@@ -109,7 +109,8 @@ printf "\n#---------------------------------------#\n\n"
 
 $base_dir/Tools/01_Get_phylip_format.sh $base_dir/Tools $out_name
 
-# Create dir for individual loci alignments 
+# Create dir for individual loci alignments
+cd $main_dir 
 mkdir 00_alignments_per_locus
 
 for i in $main_dir/phylip_format/*
