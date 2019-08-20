@@ -58,6 +58,7 @@ for my $sp ( @list_species ){
 	# Add the f* chomp that caused me so 
 	# many problems...
 	chomp( $sp );
+	# Add bulletproof against Windows format...
 	$sp =~ s/\"//;
 	$sp =~ s/\r//;
 	$sp =~ s/\'//;
@@ -155,6 +156,7 @@ foreach my $line (@alignments){
 		# The format of a line in this file is "<SPECIES>$separator<SEQUENCE>"
 		my @split_line = split( /$separator/, $line );
 		$species = $split_line[0];
+		# Add bulletproof against Windows format...
 		$species =~ s/\"//;
 		$species =~ s/\r//;
 		$species =~ s/\'//;
