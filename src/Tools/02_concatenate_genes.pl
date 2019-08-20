@@ -58,6 +58,9 @@ for my $sp ( @list_species ){
 	# Add the f* chomp that caused me so 
 	# many problems...
 	chomp( $sp );
+	$sp =~ s/\"//;
+	$sp =~ s/\r//;
+	$sp =~ s/\'//;
 	$species_hash{ $sp } = undef;
 	$species_hash2{ $sp } = undef;	
 	$visited_species{ $sp } = 0; 
@@ -152,6 +155,9 @@ foreach my $line (@alignments){
 		# The format of a line in this file is "<SPECIES>$separator<SEQUENCE>"
 		my @split_line = split( /$separator/, $line );
 		$species = $split_line[0];
+		$species =~ s/\"//;
+		$species =~ s/\r//;
+		$species =~ s/\'//;
 		chomp( $species );
 		$sequence = $split_line[1];
 		chomp( $sequence );
