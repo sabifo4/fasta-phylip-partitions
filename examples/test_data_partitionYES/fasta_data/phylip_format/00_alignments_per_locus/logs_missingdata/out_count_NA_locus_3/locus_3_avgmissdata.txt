@@ -1,0 +1,19 @@
+Num_missing_taxa	Num_present_taxa	Num_total_taxa	Avg_missdat_with_missing_taxa	Avg_missdat_without_missing_taxa
+0	5	5	0	0
+
+Eq. before removing missing taxa: num_gaps / ( num_taxa * len_aln ) --> (0+0)/((0+5)*85)
+Eq. after removing missing taxa:  num_gaps / ( num_taxa * len_aln ) --> 0/(5*85)
+
+Missing data before (total taxa): 0.00 (5)
+
+Missing data after (present taxa): 0.00 (5)
+
+Num_missing_taxa	Num_present_taxa	Num_total_taxa	Avg_missX_with_missing_taxa	Avg_missX_without_missing_taxa
+0	5	5	0.0164705882352941	0.0164705882352941
+
+Eq. before removing missing taxa: num_gaps / ( num_taxa * len_aln ) --> (0+7)/((0+5)*85)
+Eq. after removing missing taxa:  num_gaps / ( num_taxa * len_aln ) --> 7/(5*85)
+
+Missing char "X" (e.g., N) before (total taxa): 1.65 (5)
+
+Missing char "X" (e.g., N) after (present taxa): 1.65 (5)

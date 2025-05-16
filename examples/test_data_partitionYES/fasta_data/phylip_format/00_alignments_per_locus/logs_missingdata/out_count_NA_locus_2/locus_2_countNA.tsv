@@ -1,0 +1,11 @@
+<< DIR locus_2 >>
+Num_missing_taxa	Num_present_taxa	Num_total_taxa	Avg_missdat_with_missing_taxa	Avg_missdat_without_missing_taxa
+0	4	4	0	0
+Missing data before (total taxa): 0.00 (4)
+Missing data after (present taxa): 0.00 (4)
+
+Num_missing_taxa	Num_present_taxa	Num_total_taxa	Avg_missX_with_missing_taxa	Avg_missX_without_missing_taxa
+0	4	4	0.122340425531915	0.122340425531915
+Missing char "X" (e.g., N) before (total taxa): 12.23 (4)
+Missing char "X" (e.g., N) after (present taxa): 12.23 (4)
+

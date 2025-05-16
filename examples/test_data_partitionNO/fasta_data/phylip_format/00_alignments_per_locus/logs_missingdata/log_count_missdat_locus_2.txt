@@ -1,0 +1,23 @@
+Parsing alignment locus_2 ... ... 
+Length alignment: 47
+Number of taxa: 4
+Taxon: sp1 | Num gaps: 0 | Num char "X" (e.g., N): 1 | Missing taxon?: N | % Missing data: 0 | % Missing char "X" (e.g., N): 2.12765957446809
+Taxon: sp2 | Num gaps: 0 | Num char "X" (e.g., N): 6 | Missing taxon?: N | % Missing data: 0 | % Missing char "X" (e.g., N): 12.7659574468085
+Taxon: sp3 | Num gaps: 0 | Num char "X" (e.g., N): 16 | Missing taxon?: N | % Missing data: 0 | % Missing char "X" (e.g., N): 34.0425531914894
+Taxon: sp6 | Num gaps: 0 | Num char "X" (e.g., N): 0 | Missing taxon?: N | % Missing data: 0 | % Missing char "X" (e.g., N): 0
+
+Number of missing taxa = 0
+Number of present taxa = 4
+Total number of taxa = 4
+
+Eq: num_gaps / ( num_taxa * len_aln ) --> (0+0)/((0+4)*47)
+Avg missing data before removing missing taxa = 0 = 0%
+Eq: num_gaps / ( num_taxa * len_aln ) --> 0/(4*47)
+Avg missing data after removing missing taxa = 0 = 0%
+
+
+Eq: num_gaps / ( num_taxa * len_aln ) --> (0+23)/((0+4)*47)
+Avg missing data before removing missing taxa = 0 = 0%
+Eq: num_gaps / ( num_taxa * len_aln ) --> 23/(4*47)
+Avg missing data after removing missing taxa = 0 = 0%
+

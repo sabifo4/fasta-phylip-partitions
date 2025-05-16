@@ -1,0 +1,6 @@
+Length for species sp1 is: 78
+Length for species sp2 is: 78
+Length for species sp3 is: 78
+Length for species sp4 is: 78
+Length for species sp5 is: 78
+Length for species sp6 is: 78

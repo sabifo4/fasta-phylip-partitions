@@ -1,0 +1,24 @@
+Parsing alignment locus_3 ... ... 
+Length alignment: 85
+Number of taxa: 5
+Taxon: sp1 | Num gaps: 0 | Num char "X" (e.g., N): 3 | Missing taxon?: N | % Missing data: 0 | % Missing char "X" (e.g., N): 3.52941176470588
+Taxon: sp2 | Num gaps: 0 | Num char "X" (e.g., N): 3 | Missing taxon?: N | % Missing data: 0 | % Missing char "X" (e.g., N): 3.52941176470588
+Taxon: sp3 | Num gaps: 0 | Num char "X" (e.g., N): 1 | Missing taxon?: N | % Missing data: 0 | % Missing char "X" (e.g., N): 1.17647058823529
+Taxon: sp4 | Num gaps: 0 | Num char "X" (e.g., N): 0 | Missing taxon?: N | % Missing data: 0 | % Missing char "X" (e.g., N): 0
+Taxon: sp6 | Num gaps: 0 | Num char "X" (e.g., N): 0 | Missing taxon?: N | % Missing data: 0 | % Missing char "X" (e.g., N): 0
+
+Number of missing taxa = 0
+Number of present taxa = 5
+Total number of taxa = 5
+
+Eq: num_gaps / ( num_taxa * len_aln ) --> (0+0)/((0+5)*85)
+Avg missing data before removing missing taxa = 0 = 0%
+Eq: num_gaps / ( num_taxa * len_aln ) --> 0/(5*85)
+Avg missing data after removing missing taxa = 0 = 0%
+
+
+Eq: num_gaps / ( num_taxa * len_aln ) --> (0+7)/((0+5)*85)
+Avg missing data before removing missing taxa = 0 = 0%
+Eq: num_gaps / ( num_taxa * len_aln ) --> 7/(5*85)
+Avg missing data after removing missing taxa = 0 = 0%
+

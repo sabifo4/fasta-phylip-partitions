@@ -1,0 +1,7 @@
+Taxon	Len_aln	Num_gaps	Num_N	Missing_taxon	perc_missdat	perc_missN
+sp1	30	0	1	N	0	3.33333333333333
+sp2	30	0	2	N	0	6.66666666666667
+sp3	30	0	0	N	0	0
+sp4	30	0	0	N	0	0
+sp5	30	0	0	N	0	0
+sp6	30	0	0	N	0	0
