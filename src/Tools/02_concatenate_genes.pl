@@ -30,8 +30,8 @@ my $out_fname = $ARGV[3];
 chomp( $out_fname );
 
 # 3. Open the output file to save the sequences divided according to the partitions 
-#open(OUT1, ">concatenated_tab_$string.aln") or die "Cannot create the output file: $!";
-open(OUT2, ">".$out_fname."_concat.aln") or die "Cannot create the output file: $!";
+#open(OUT1, ">concatenated_tab_$string.phy") or die "Cannot create the output file: $!";
+open(OUT2, ">".$out_fname."_concat.phy") or die "Cannot create the output file: $!";
 open(OUT3, ">".$out_fname."_concat.fasta") or die "Cannot create the output file: $!";
 open(OUT4, ">".$out_fname."_concat_log.txt") or die "Cannot create the output file: $!";
 open(OUT5, ">".$out_fname."_concat_sumstats.tsv") or die "Cannot create the output file: $!";

@@ -34,9 +34,12 @@ print "Partitioning alignment in file ".$ARGV[0]." ...\n";
 #print "You separate species from sequences using the separator ".$separator."\n\n";
 
 # Open the output file to save the sequences divided according to the partitions 
-open(OUT, ">partitions12.3_$string.aln") or die "Cannot create the output file: $!";
-open(OUT2, ">partitions12_$string.aln") or die "Cannot create the output file: $!";
-open(OUT3, ">partitions3_$string.aln") or die "Cannot create the output file: $!";
+open(OUT, ">partitions12.3_$string.phy") or die "Cannot create the output file: $!";
+open(OUT2, ">partitions12_$string.phy") or die "Cannot create the output file: $!";
+open(OUT3, ">partitions3_$string.phy") or die "Cannot create the output file: $!";
+# 250511-SAC: new output files to collect 1st and 2nd CPs separately
+open(OUT4, ">partitions1_$string.phy") or die "Cannot create the output file: $!";
+open(OUT5, ">partitions2_$string.phy") or die "Cannot create the output file: $!";
 
 # Get lines of the file
 my @alignments = <ALIGNMENTS>;
@@ -47,6 +50,9 @@ my $sequence = "";
 my @nucleotides = ();
 my $part1 = "";
 my $part2 = "";
+# 250511-SAC: new variable to collect 1st and 2nd CPs separately
+my $part3 = "";
+my $part4 = "";
 my $count = 0 ;
 my $count_sp = 0;
 my $length_seq = 0;
@@ -84,12 +90,18 @@ foreach my $line (@alignments){
 		if ( $count == 1 ){
 			$part1 = $species."\t";
 			$part2 = $species."\t";
+			# 250511-SAC: collecting 1st and 2nd CPs separately
+			$part3 = $species."\t";
+			$part4 = $species."\t";
 			$length_seq = length($sequence);
 		}
 		# If not, just concatenate to the previous string
 		else{
 			$part1 .= $species."\t";
 			$part2 .= $species."\t";
+			# 250511-SAC: collecting 1st and 2nd CPs separately
+			$part3 .= $species."\t";
+			$part4 .= $species."\t";
 		}
 		# Go through each nucleotide and find the 1st, 2nd, and 3rd CPs 
 		# The 1st and 2nd CPs will be separated into one partition ($part1)
@@ -99,11 +111,21 @@ foreach my $line (@alignments){
 			# 1. Start counting nucleotides
 			$count_nucs += 1;
 
+			# 250511-SAC: collecting 1st and 2nd CPs separately
+			# 2.0. If $count_name == 2 (2nd CP), then restart $count_nucs
+			#      and put nucleotide in second partition
+			#      Do the same for $count_name == 1 (1std CP)
+			if ( $count_nucs == 1 ){
+				$part3 .= $nucleotides[$i];	
+			}
+			if ( $count_nucs == 2 ){
+				$part4 .= $nucleotides[$i];	
+			}
 			# 2.1. If $count_name == 1 | 2 ( 1st & 2nd CPs )
 			if ( $count_nucs == 1 || $count_nucs == 2 ){
 				$part1 .= $nucleotides[$i];
-			} 
-			# 2.2. If $count_name == 3 (3rd CP), then restart $count_nucs
+			}
+			# 2.3. If $count_name == 3 (3rd CP), then restart $count_nucs
 			#      and put nucleotide in second partition
 			elsif ( $count_nucs == 3 ){
 				$part2 .= $nucleotides[$i];	
@@ -116,6 +138,9 @@ foreach my $line (@alignments){
 			if ( $i == (length($sequence)-1) ){
 				$part1 .= "\n";
 				$part2 .= "\n";
+				# 250511-SAC: collecting 1st and 2nd CPs separately
+				$part3 .= "\n";
+				$part4 .= "\n";
 			}
 		
 		}
@@ -133,19 +158,37 @@ my @part2_div = split('\t', $part2);
 my @part2_div2 = split('\n', $part2_div[1]);
 my $seq_length_part2 = length($part2_div2[0]);
 
+# 250511-SAC: collecting 1st and and 2nd CPs separately
+my @part3_div = split('\t', $part3);
+my @part3_div2 = split('\n', $part3_div[1]);
+my $seq_length_part3 = length($part3_div2[0]);
+
+my @part4_div = split('\t', $part4);
+my @part4_div2 = split('\n', $part4_div[1]);
+my $seq_length_part4 = length($part4_div2[0]);
+
 # Replace tab that separates species name from 
 # sequence with 6 spaces to meet PAML format 
 $part1 =~ s/\t/      /g;
 $part2 =~ s/\t/      /g;
+# 250511-SAC: collecting 1st and 2nd CPs separately
+$part3 =~ s/\t/      /g;
+$part4 =~ s/\t/      /g;
 
 # Print the content of the partitions in the output file
 # in PAML format
 print OUT $count_sp." ".$seq_length_part1."\n".$part1."\n\n".$count_sp." ".$seq_length_part2."\n".$part2."\n";
 print OUT2 $count_sp." ".$seq_length_part1."\n".$part1;
 print OUT3 $count_sp." ".$seq_length_part2."\n".$part2;
+# 250511-SAC: writing out sequence alignment with 1st and 2nd CPs
+# separately
+print OUT4 $count_sp." ".$seq_length_part3."\n".$part3;
+print OUT5 $count_sp." ".$seq_length_part4."\n".$part4;
 
 # Close files
 close(OUT);
 close(OUT2);
 close(OUT3);
+close(OUT4);
+close(OUT5);
 close(ALIGNMENTS);

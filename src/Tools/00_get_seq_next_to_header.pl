@@ -7,7 +7,7 @@ use warnings;
 open (ALN, "<$ARGV[0]") or die "Cannot open $ARGV[0] file: $!";
 # Get the name of the string from the input file
 my $string = $ARGV[0];
-$string =~ s/\..*/\_tab.aln/;
+$string =~ s/\..*/\_tab.phy/;
 chomp($string);
 # Open the output file to save the sequences aligned to their tags
 open(OUT, ">$string") or die "Cannot create the output file: $!";

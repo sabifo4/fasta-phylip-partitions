@@ -38,7 +38,7 @@ do
 	cd phylip_format/$count
 	perl $base_dir/00_get_seq_next_to_header.pl *one_line*
 	# 2.5. Get alignment in PHYLIP format 
-	perl $base_dir/01_conc_seqs.pl *_tab.aln
+	perl $base_dir/01_conc_seqs.pl *_tab.phy
 	# 2.6. Remove unnecessary files 
 	rm *one_line*
 	cd ../..
@@ -54,8 +54,8 @@ then
 
 	for i in `seq 1 $count`
 	do
-		cat $i/*aln >> $out_name"_all_loci.aln"
-		printf "\n" >> $out_name"_all_loci.aln"
+		cat $i/*phy >> $out_name"_all_loci.phy"
+		printf "\n" >> $out_name"_all_loci.phy"
 	done 
 	
 fi

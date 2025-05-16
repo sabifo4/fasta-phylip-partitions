@@ -14,19 +14,27 @@ for i in `seq 1 $num_dirs`
 do
 	if [ $parts == "partN" ]
 	then
-		sed 1,2d $phyl_dir/${i}/*aln >> $phyl_dir/tmp_combined.aln 
-		printf "\n" >> $phyl_dir/tmp_combined.aln 
-		name=$( echo $phyl_dir/${i}/*aln | sed 's/..*\///' )
+		sed 1,2d $phyl_dir/${i}/*phy >> $phyl_dir/tmp_combined.phy 
+		printf "\n" >> $phyl_dir/tmp_combined.phy 
+		name=$( echo $phyl_dir/${i}/*phy | sed 's/..*\///' )
 	else
-		sed 1d $phyl_dir/${i}/partitions12_*aln >> $phyl_dir/tmp_combined_12.aln 
-		printf "\n" >> $phyl_dir/tmp_combined_12.aln 
+		sed 1d $phyl_dir/${i}/partitions12_*phy >> $phyl_dir/tmp_combined_12.phy 
+		printf "\n" >> $phyl_dir/tmp_combined_12.phy 
+
+		# 250511-SAC: writing out sequence alignment with only 1st CPs or
+		# only 2nd CPs
+		sed 1d $phyl_dir/${i}/partitions1_*phy >> $phyl_dir/tmp_combined_1.phy 
+		printf "\n" >> $phyl_dir/tmp_combined_1.phy 
 		
-		sed 1d $phyl_dir/${i}/partitions3_*aln >> $phyl_dir/tmp_combined_3.aln 
-		printf "\n" >> $phyl_dir/tmp_combined_3.aln 
+		sed 1d $phyl_dir/${i}/partitions2_*phy >> $phyl_dir/tmp_combined_2.phy 
+		printf "\n" >> $phyl_dir/tmp_combined_2.phy 
 		
-		name_locus=$( echo $phyl_dir/${i}/partitions12.3*aln | sed 's/..*partitions12\.3\_//' | sed 's/\.aln//' )
-		sed 1,2d $phyl_dir/${i}/$name_locus*aln >> $phyl_dir/tmp_combined.aln 
-		printf "\n" >> $phyl_dir/tmp_combined.aln 
+		sed 1d $phyl_dir/${i}/partitions3_*phy >> $phyl_dir/tmp_combined_3.phy 
+		printf "\n" >> $phyl_dir/tmp_combined_3.phy 
+		
+		name_locus=$( echo $phyl_dir/${i}/partitions12.3*phy | sed 's/..*partitions12\.3\_//' | sed 's/\.phy//' )
+		sed 1,2d $phyl_dir/${i}/$name_locus*phy >> $phyl_dir/tmp_combined.phy 
+		printf "\n" >> $phyl_dir/tmp_combined.phy 
 		
 		name=$( echo $name_locus )
 	fi 

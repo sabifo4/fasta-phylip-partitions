@@ -22,8 +22,8 @@ $string =~ s/\_one\_line..*//;
 chomp($string);
 
 # Open the output file to save the sequences divided according to the partitions 
-#open(OUT1, ">concatenated_tab_$string.aln") or die "Cannot create the output file: $!";
-open(OUT2, ">$string.aln") or die "Cannot create the output file: $!";
+#open(OUT1, ">concatenated_tab_$string.phy") or die "Cannot create the output file: $!";
+open(OUT2, ">$string.phy") or die "Cannot create the output file: $!";
 #open(OUT3, ">$string.fasta") or die "Cannot create the output file: $!";
 open(OUT4, ">$string.log.txt") or die "Cannot create the output file: $!";
 
